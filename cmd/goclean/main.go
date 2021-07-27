@@ -39,5 +39,6 @@ func main() {
 		os.Exit(1)
 	}
 
-	cleanup.GetExpiredFiles(dir, maxAgeD*24)
+	expiredFiles := cleanup.GetExpiredFiles(dir, maxAgeD*24)
+	cleanup.DeleteFiles(expiredFiles)
 }
